@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hilton Short Hills, NJ Hotel</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+        body {
+            color: #111;
+            background-color: #f4f5f7;
+            line-height: 1.5;
+        }
+        header {
+            background: #fff;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        .logo {
+            font-size: 26px;
+            font-weight: bold;
+            color: #002D62;
+            letter-spacing: 0.5px;
+        }
+        .nav-links a {
+            margin-left: 20px;
+            text-decoration: none;
+            color: #002D62;
+            font-size: 14px;
+            font-weight: bold;
+        }
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+            height: 450px;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 40px;
+        }
+        .hero h1 {
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 15px;
+        }
+        .booking-bar {
+            background: white;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 2fr 2fr 1.5fr 1fr;
+            gap: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            border-radius: 6px;
+            margin: -35px auto 30px auto;
+            max-width: 1100px;
+            width: 90%;
+            position: relative;
+            z-index: 10;
+            align-items: center;
+        }
+        .booking-field {
+            border-right: 1px solid #ddd;
+            padding-right: 15px;
+        }
+        .booking-field:last-of-type {
+            border-right: none;
+        }
+        .booking-field label {
+            font-size: 11px;
+            color: #555;
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .booking-field .val {
+            font-size: 14px;
+            font-weight: bold;
+            color: #111;
+        }
+        .btn-check {
+            background-color: #002D62;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 4px;
+            font-weight: bold;
+            cursor: pointer;
+            text-align: center;
+            font-size: 14px;
+        }
+        .btn-check:hover {
+            background-color: #001f4d;
+        }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto 40px auto;
+            padding: 0 20px;
+        }
+        .section {
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            margin-bottom: 25px;
+        }
+        .section h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: #002D62;
+        }
+        .review-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            font-size: 14px;
+        }
+        .rating-box {
+            background: #002D62;
+            color: white;
+            padding: 5px 10px;
+            font-weight: bold;
+            border-radius: 4px;
+        }
+        .amenities-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 12px;
+        }
+        .amenity-item {
+            font-size: 14px;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .amenity-item::before {
+            content: "•";
+            color: #002D62;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .honors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        .honors-card {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            border-left: 4px solid #002D62;
+        }
+        .honors-card h4 {
+            font-size: 16px;
+            color: #002D62;
+            margin-bottom: 8px;
+        }
+        .honors-card p {
+            font-size: 13px;
+            color: #555;
+        }
+        .policies-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 15px;
+        }
+        .policy-box {
+            background: #f9f9f9;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e0e0e0;
+        }
+        .policy-box h4 {
+            font-size: 14px;
+            color: #002D62;
+            margin-bottom: 5px;
+        }
+        .policy-box p {
+            font-size: 13px;
+            color: #444;
+        }
+        footer {
+            background: #002D62;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+            font-size: 13px;
+        }
+        footer a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo-area">
+            <div class="logo">Hilton</div>
+        </div>
+        <div class="nav-links">
+            <a href="https://www.hilton.com/en/book/reservation/find/">Your Stays</a>
+            <a href="https://www.hilton.com/en/hotels/ewrshhh-hilton-short-hills/?numRooms=1&numAdults=1&numChildren=0&room1ChildAges=&room1AdultAges=&displayCurrency=USD">Join</a>
+            <a href="#">Sign In</a>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Hilton Short Hills</h1>
+        <p>41 John F. Kennedy Parkway, Short Hills, New Jersey, 07078, USA</p>
+    </section>
+
+    <div class="booking-bar">
+        <div class="booking-field">
+            <label>DATES</label>
+            <div class="val">20 OCT TUE - 21 OCT WED</div>
+        </div>
+        <div class="booking-field">
+            <label>ROOMS & GUESTS</label>
+            <div class="val">1 room, 1 guest</div>
+        </div>
+        <div class="booking-field">
+            <label>SPECIAL RATES</label>
+            <div class="val">Select Rates</div>
+        </div>
+        <button class="btn-check">Check prices</button>
+    </div>
+
+    <div class="container">
+        <!-- Overview Section -->
+        <div class="section">
+            <div class="review-badge">
+                <span class="rating-box">3.9</span>
+                <span><strong>TripAdvisor average rating</strong> (1,399 reviews)</span>
+            </div>
+            <h2>Conveniently located Northern NJ Getaway</h2>
+            <p style="color: #445; line-height: 1.6;">Situated close to the business hubs of Morristown and Parsippany and a short drive from I-78, our hotel features locally-sourced food, an outdoor terrace and lounge, tennis courts, and indoor/outdoor pools. We’re across the street from The Mall at Short Hills.</p>
+        </div>
+
+        <!-- Amenities Section -->
+        <div class="section">
+            <h2>Our amenities</h2>
+            <div class="amenities-grid">
+                <div class="amenity-item">Non-smoking rooms</div>
+                <div class="amenity-item">On-site restaurant</div>
+                <div class="amenity-item">Indoor pool</div>
+                <div class="amenity-item">Outdoor pool</div>
+                <div class="amenity-item">Fitness center</div>
+                <div class="amenity-item">Digital Key</div>
+                <div class="amenity-item">Tennis</div>
+                <div class="amenity-item">EV charging</div>
+                <div class="amenity-item">Executive lounge</div>
+                <div class="amenity-item">Room service</div>
+            </div>
+        </div>
+
+        <!-- Rooms and Suites Section -->
+        <div class="section">
+            <h2>Rooms and suites</h2>
+            <p style="color: #445; margin-bottom: 10px;">Explore a stay from <strong>$570 per night</strong> for your selected dates: October 20 – 21, 2026</p>
+            <a href="url?id=9" style="color: #002D62; font-weight: bold; text-decoration: none;">Explore Rooms &rarr;</a>
+        </div>
+
+        <!-- Hilton Honors Section -->
+        <div class="section">
+            <h2>Hilton Honors member benefits</h2>
+            <div class="honors-grid" style="margin-top: 15px;">
+                <div class="honors-card">
+                    <h4>Hilton Honors Discount Rate</h4>
+                    <p>Get the best price when you book directly, backed by our Price Match Guarantee.</p>
+                </div>
+                <div class="honors-card">
+                    <h4>Points Toward Free Nights</h4>
+                    <p>Use your Points on free nights, experiences, shopping, car rentals, and more.</p>
+                </div>
+                <div class="honors-card">
+                    <h4>Digital Check-In & Key</h4>
+                    <p>Check in from your phone, pick your room, and unlock doors using your Digital Key.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hotel Policies Section -->
+        <div class="section">
+            <h2>Hotel policies</h2>
+            <div class="policies-grid" style="margin-top: 15px;">
+                <div class="policy-box">
+                    <h4>Self-Parking</h4>
+                    <p>On-site, $27.00 per day</p>
+                </div>
+                <div class="policy-box">
+                    <h4>Valet Parking</h4>
+                    <p>$32.00 per day</p>
+                </div>
+                <div class="policy-box">
+                    <h4>Pets Policy</h4>
+                    <p>Pets not allowed</p>
+                </div>
+                <div class="policy-box">
+                    <h4>Smoking</h4>
+                    <p>Non-smoking property</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dining & Drinks Section -->
+        <div class="section">
+            <h2>Dining and drinks</h2>
+            <p style="color: #445; line-height: 1.6;">The Dining Room serves rustic seasonal dishes for breakfast, lunch, and dinner. Sip cocktails at the Patio Bar and Grill or by the firepit at The Retreat Bar & Rooftop.</p>
+        </div>
+    </div>
+  <div class="section">
+        <h2>Contact us</h2>
+        <p style="color: #445; line-height: 1.6; margin-bottom: 15px;">Have questions about your stay or need assistance? Get in touch with our team.</p>
+        <div style="font-size: 14px; color: #333; line-height: 1.8;">
+            <p><strong>Phone:</strong> +1 973-379-4300</p>
+            <p><strong>Email:</strong> shorthills.info@hilton.com</p>
+            <p><strong>Address:</strong> 41 John F. Kennedy Parkway, Short Hills, New Jersey, 07078, USA</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Hilton Clone. All rights reserved. <br> <a href="https://www.hilton.com/en/p/global-privacy-statement/">Global Privacy Statement</a> | <a href="https://www.hilton.com/en/p/site-usage-agreement/">Site Usage Agreement</a></p>
+    </footer>
+
+</body>
+</html>
